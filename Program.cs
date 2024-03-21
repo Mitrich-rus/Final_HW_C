@@ -10,9 +10,7 @@
 }
 
 
-string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-static string[] resultArray(string[] words)
+static string[] ResultArray(string[] words)
 {
     string[] tempArray = new string[words.Length];
     int newLength = 0;
@@ -28,12 +26,16 @@ static string[] resultArray(string[] words)
 string[] resultArray = new string[newLength];
 for (int i = 0; i < newLength; i++)
     {
-        resultArray[i] = tempArray[newLength];
+        resultArray[i] = tempArray[i];
+        Console.WriteLine(resultArray[i]);
     }
+    
     return resultArray;
 }
 
 
-
 string input = Prompt("Введите строки для массива через пробел: ");
-Console.WriteLine(input);
+string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+Console.WriteLine("Массив строк, длина которых меньше, либо равных трем символам: ");
+ResultArray(words);
+
